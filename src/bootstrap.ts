@@ -25,7 +25,6 @@ app.use('/', new AppController().router);
 const token = TokenHandler.createToken({ userEmail: 'sebastian.berglonn@moreds.se' });
 setTimeout(() => {
     console.log(token);
-    console.log(TokenHandler.verifyToken(token));
     console.log(TokenHandler.decodeToken(token));
 }, 5000);
 
