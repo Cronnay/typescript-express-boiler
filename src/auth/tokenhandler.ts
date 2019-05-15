@@ -18,7 +18,7 @@ export default class TokenHandler {
         const signOptions: SignOptions = {
             issuer: this.issuer,
             audience: this.audience,
-            expiresIn: '3s',
+            expiresIn: '7d',
             algorithm: this.algoritm
         };
         return jwt.sign(payload, this.PRIVATE_KEY, signOptions);
