@@ -5,7 +5,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import 'reflect-metadata';
 import { createConnection } from 'typeorm';
-import TokenHandler from './auth/tokenhandler';
+import TokenHandler from './app/Auth/Tokenhandler';
 
 const app = express();
 /**

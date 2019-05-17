@@ -13,6 +13,6 @@ export default class AppController {
     }
 
     private index(req: Request, res: Response, next: NextFunction): void {
-        res.status(200).send('www');
+        res.status(200).send('Herro world');
     }
 }

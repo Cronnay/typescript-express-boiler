@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import jwt, { SignOptions, VerifyOptions, verify } from 'jsonwebtoken';
+import jwt, { SignOptions, VerifyOptions } from './node_modules/jsonwebtoken';
 
 export default class TokenHandler {
     private static issuer: string = 'Sebbe AB';
@@ -24,6 +24,12 @@ export default class TokenHandler {
         return jwt.sign(payload, this.PRIVATE_KEY, signOptions);
     }
 
+    /**
+     * 
+     * @param token {string}
+     * Verifies if the token is valid
+     */
+
     public static verifyToken(token: string) {
         const verifyOptions: VerifyOptions = {
             issuer: this.issuer,
@@ -36,6 +42,12 @@ export default class TokenHandler {
             return false;
         }
     }
+
+    /**
+     * 
+     * @param token {string}
+     * Verifies the token, then decodes it
+     */
 
     public static decodeToken(token: string) {
         if (!this.verifyToken(token)) {
