@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-import { IResponse } from './../Interfaces/IResponse';
 import TokenHandler from '../Auth/Tokenhandler'
 import { Token } from './../Models/TokenModel';
 import Hashing from './../Helpers/Crypting';
@@ -19,4 +18,9 @@ export async function IsAuthenticated(req: Request, res: Response, next: NextFun
     if(!backendToken) {
         res.sendStatus(401);
     }
+
+    console.log(backendToken);
+    console.log(hashedToken);
+    console.log(req.headers.authorization);
+    next();
 }
