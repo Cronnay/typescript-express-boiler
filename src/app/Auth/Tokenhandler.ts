@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import jwt, { SignOptions, VerifyOptions } from './node_modules/jsonwebtoken';
+import jwt, { SignOptions, VerifyOptions } from 'jsonwebtoken';
 
 export default class TokenHandler {
     private static issuer: string = 'Sebbe AB';
