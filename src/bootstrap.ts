@@ -5,7 +5,6 @@ import cors from 'cors';
 import morgan from 'morgan';
 import 'reflect-metadata';
 import { createConnection } from 'typeorm';
-import TokenHandler from './app/Auth/Tokenhandler';
 
 const app = express();
 /**
@@ -22,11 +21,6 @@ app.use(morgan('dev'));
  */
 import AppController from './app/Controllers/AppController';
 app.use('/', new AppController().router);
-const token = TokenHandler.createToken({ userEmail: 'sebastian.berglonn@moreds.se' });
-setTimeout(() => {
-    console.log(token);
-    console.log(TokenHandler.decodeToken(token));
-}, 5000);
 
 createConnection()
 .then(() => {
